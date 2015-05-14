@@ -1,11 +1,13 @@
 require 'spec_helper'
+require 'tmpdir'
 
 describe WorkerScoreboard do
-  it 'has a version number' do
-    expect(WorkerScoreboard::VERSION).not_to be nil
-  end
-
-  it 'does something useful' do
-    expect(false).to eq(true)
+  context do
+    let(:base_dir) { Dir.tmpdir }
+    subject { WorkerScoreboard.new(base_dir) }
+    it do
+      subject.update('me manager')
+      expect(subject.read_all.values.first).to eq 'me manager'
+    end
   end
 end

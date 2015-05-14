@@ -1,4 +1,4 @@
-# WorkerScoreboard
+# WorkerScoreboard [![Build Status](https://travis-ci.org/SpringMT/worker_scoreboard.svg)](https://travis-ci.org/SpringMT/worker_scoreboard)
 
 TODO: Write a gem description
 
