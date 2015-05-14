@@ -6,15 +6,15 @@ require 'worker_scoreboard/version'
 Gem::Specification.new do |spec|
   spec.name          = "worker_scoreboard"
   spec.version       = WorkerScoreboard::VERSION
-  spec.authors       = ["haruyama-makoto"]
-  spec.email         = ["makoto.haruyama@dena.com"]
+  spec.authors       = ["SpringMT"]
+  spec.email         = ["today.is.sky.blue.sky@gmail.com"]
 
-  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
+  #spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
   spec.required_rubygems_version = ">= 2.0"
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{a scoreboard for monitoring status of many workers}
+  spec.description   = %q{a scoreboard for monitoring status of many workers}
+  spec.homepage      = "https://github.com/SpringMT/worker_scoreboard"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

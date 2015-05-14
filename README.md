@@ -1,6 +1,6 @@
 # WorkerScoreboard [![Build Status](https://travis-ci.org/SpringMT/worker_scoreboard.svg)](https://travis-ci.org/SpringMT/worker_scoreboard)
 
-TODO: Write a gem description
+This is a Ruby version of [kazuho/p5-Parallel-Scoreboard](https://github.com/kazuho/p5-Parallel-Scoreboard).
 
 ## Installation
 
