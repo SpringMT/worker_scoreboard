@@ -77,7 +77,7 @@ class WorkerScoreboard
     files =  Dir.glob("#{@base_dir}/status_*")
     files.each do |file|
       file =~ /\/status_(.*)$/ or next
-      id = $1
+      id = $1.to_i
       fh = File.open(file, 'r+b') or next
       if id != worker_id && fh.flock(File::LOCK_EX|File::LOCK_NB)
         fh.close
