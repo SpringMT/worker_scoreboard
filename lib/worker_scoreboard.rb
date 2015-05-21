@@ -81,7 +81,11 @@ class WorkerScoreboard
       fh = File.open(file, 'r+b') or next
       if id != worker_id && fh.flock(File::LOCK_EX|File::LOCK_NB)
         fh.close
-        File.unlink file or not $! === Errno::ENOENT and warn "failed to remove an obsolete scoreboard file:#{file}:#{$!}"
+        begin
+          File.unlink file
+        rescue => e
+          warn "failed to remove an obsolete scoreboard file:#{file}:#{$!}" unless e === Errno::ENOENT
+        end
         next
       end
       yield id, fh
