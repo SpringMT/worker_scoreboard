@@ -34,8 +34,8 @@ class WorkerScoreboard
       tmp_filename = "#{filename}.tmp"
       f = File.open(tmp_filename, 'wb')
       f.flush
-      f.flock File::LOCK_EX or raise "failed to flock LOCK_EX file:#{@fn}.tmp:#{$!}"
-      File.rename(tmp_filename, filename) or raise "failed to rename file:#{@fn.tmp} to #{@fn}:#{$!}"
+      f.flock File::LOCK_EX or raise "failed to flock LOCK_EX file:#{tmp_filename}:#{$!}"
+      File.rename(tmp_filename, filename) or raise "failed to rename file:#{tmp_filename} to #{filename}:#{$!}"
       @fh = f
       @id_for_fh = worker_id
     end
