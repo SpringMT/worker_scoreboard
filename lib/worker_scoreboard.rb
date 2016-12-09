@@ -1,5 +1,6 @@
 require "worker_scoreboard/version"
 require 'digest/md5'
+require 'fileutils'
 
 class WorkerScoreboard
   def initialize(base_dir)
@@ -15,7 +16,7 @@ class WorkerScoreboard
     ObjectSpace.define_finalizer(self, @clean_proc)
 
     unless Dir.exist? @base_dir
-      Dir.mkdir @base_dir or fail "failed to create directory:#{@base_dir}:#{$!}"
+      FileUtils.mkdir_p @base_dir or fail "failed to create directory:#{@base_dir}:#{$!}"
     end
     begin
       File.unlink build_filename
