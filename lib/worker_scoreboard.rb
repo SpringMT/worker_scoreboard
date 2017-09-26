@@ -79,7 +79,8 @@ class WorkerScoreboard
     files.each do |file|
       file =~ /\/status_(.*)$/ or next
       id = $1.to_i
-      fh = File.open(file, 'r+b') or next
+      # ignore files removed after glob but before open
+      fh = File.open(file, 'r+b') rescue next
       if id != worker_id && fh.flock(File::LOCK_EX|File::LOCK_NB)
         fh.close
         begin
